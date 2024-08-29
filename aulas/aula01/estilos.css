@@ -16,7 +16,9 @@ body {
 
 header {
   display: flex;
-  justify-content: space-between;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   padding: 16px;
   background-color: blue;
@@ -24,8 +26,8 @@ header {
 }
 
 header div {
-  display: flex;
-  align-items: center;
+ display: flex;
+ align-items: center;
 }
 
 header img {
