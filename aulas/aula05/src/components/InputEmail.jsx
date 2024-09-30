@@ -3,7 +3,7 @@ function InputEmail(props) {
     <>
       <label htmlFor="email">E-mail</label>
       <input
-        type="email"
+        type={"email"}
         id="email"
         name="email"
         value={props.valor}
