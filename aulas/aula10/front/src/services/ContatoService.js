@@ -1,8 +1,17 @@
 import axios from "axios";
 
-const uri = import.meta.env.API_URL;
+const url = import.meta.env.VITE_API_URL;
 
-function buscarTodos() {}
+function buscarTodos() {
+  return axios
+    .get(url)
+    .then((response) => {
+      return { sucesso: true, dados: response.data };
+    })
+    .catch((error) => {
+      return { sucesso: false, mensagem: error.message };
+    });
+}
 
 function buscar(id) {}
 
@@ -19,6 +28,15 @@ function adicionar(contato) {
 
 function atualizar(contato) {}
 
-function remover(id) {}
+function remover(id) {
+  return axios
+    .delete(`${url}/${id}`) // http://localhost:3000/contados/1a2b
+    .then((response) => {
+      return { sucesso: true, dados: response.data };
+    })
+    .catch((error) => {
+      return { sucesso: false, mensagem: error.message };
+    });
+}
 
 export { buscarTodos, buscar, adicionar, atualizar, remover };
